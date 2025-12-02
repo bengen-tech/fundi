@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    if (sessionStorage.getItem("isLoggedIn") !== "true") {
+      alert("Please log in first.");
+      window.location.href = "login.html";
+    }
+  </script>
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ben Gen's Games 🎮</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .game-section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .game-section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .game-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .game-card {
+      background: #fff;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .game-card:hover {
+      transform: scale(1.03);
+    }
+
+    .game-card img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    .game-card h3 {
+      margin: 10px 0 5px;
+    }
+
+    .game-card a {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 6px 12px;
+      background: #333;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .game-card a:hover {
+      background: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎮 Ben Gen's Game Zone</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">🏠 Home</a></li>
+        <li><a href="tinkerbell.html">💌 Tinkerbell</a></li>
+        <li><a href="music.html">🎵 Music</a></li>
+        <li><a href="videos.html">🎬 Videos</a></li>
+        <li><a href="contact.html">📞 Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="game-section">
+      <h2>My Mini-Games Collection</h2>
+      <div class="game-grid">
+        <div class="game-card">
+          <img src="media/images/ttt-thumb.png" alt="Tic Tac Toe">
+          <h3>Tic Tac Toe</h3>
+          <p>Classic Xs an

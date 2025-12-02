@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    if (sessionStorage.getItem("isLoggedIn") !== "true") {
+      alert("Please log in first.");
+      window.location.href = "videos.html";
+    }
+  </script>
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Video Hub 🎬</title>
+  <link rel="stylesheet" href="css/style.css" />
+
+
+  <style>
+    .video-section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .video-section h2 {
+      text-align: left;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 5px;
+      margin-top: 40px;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎬 Ben Gen's Video Hub</h1>
+    <nav>
+      <ul>
+        <img src="media/images/movie1-thumb.jpg" alt="Movie 1">
+        <li><a href="index.html">🏠 Home</a></li>
+        <li><a href="tinkerbell.html">💌 Tinkerbell</a></li>
+        <li><a href="music.html">🎵 Music</a></li>
+        <li><a href="games.html">🎮 Games</a></li>
+        <li><a href="contact.html">📞 Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="video-section">
+      <h2>🎞️ Movies</h2>
+      <div class="video-grid">
+        <video controls src="media/video/movie1.mp4"></video>
+        <!-- Add more movie videos here -->
+      </div>
+
+      <h2>📺 Series</h2>
+      <div class="video-grid">
+        <video controls src="media/video/series1.mp4"></video>
+      </div>
+
+      <h2>🎤 Music Videos</h2>
+      <div class="video-grid">
+        <video controls src="media/video/media/video/24kGoldn - Good Intentions (Official Video)(720P_HD).mp4"></video>
+      </div>
+
+      <h2>⏱️ Short Clips</h2>
+      <div class="video-grid">
+        <video controls src="media/video/clip1.mp4"></video>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p style="text-align:center;">&copy; 2025 Ben Gen. Lights, camera, memories 🎥</p>
+  </footer>
+</body>
+</html>

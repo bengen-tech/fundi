@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ben Gen's Space</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <script>
+    if (sessionStorage.getItem("isLoggedIn") !== "true") {
+      alert("Please log in first.");
+      window.location.href = "login.html";
+    }
+  </script>
+ 
+  <header>
+    <h1>Welcome to Ben Gen's World 🌍</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">🏠 Home</a></li>
+        <li><a href="tinkerbell.html">💌 Tinkerbell</a></li>
+        <li><a href="music.html">🎵 Music</a></li>
+        <li><a href="videos.html">🎬 Videos</a></li>
+        <li><a href="games.html">🎮 Games</a></li>
+        <li><a href="contact.html">📞 Contact</a></li>
+    </nav>
+  </header>
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tinkerbell 💌</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <script>
+    if (sessionStorage.getItem("isLoggedIn") !== "true") {
+      alert("Please log in first.");
+      window.location.href = "login.html";
+    }
+  </script>
+  
+  <canvas id="matrix"></canvas>
+
+  <script>
+    // Matrix animation
+    const canvas = document.getElementById("matrix");
+    const ctx = canvas.getContext("2d");
+
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+
+    const chars = "01";
+    const fontSize = 14;
+    const columns = canvas.width / fontSize;
+    const drops = Array.from({ length: columns }).fill(1);
+
+    function draw() {
+      ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = "#00ffe0";
+      ctx.font = fontSize + "px monospace";
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = chars.charAt(Math.floor(Math.random() * chars.length));
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height || Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+
+        drops[i]++;
+      }
+    }
+
+    setInterval(draw, 50);
+  </script>
+
+</body>
+</html>
+
+
+  <main>
+
+      <div class="grid">
+       <div> <a href="tinkerbell.html"><img class = "letters" src="media/images/ChatGPT Image Jun 25, 2025, 01_02_07 PM.png"></img></a> </div> 
+        <div> <a href="music.html"><img class = "letters" src="media/images/ChatGPT Image Jun 25, 2025, 12_49_20 PM.png"></img></a></div>
+        <div><a href="videos.html"><img class = "letters" src="media/images/ChatGPT Image Jun 25, 2025, 12_21_27 PM.png"></img></a></div>
+        <div><a href="games.html"><img class = "letters" src="media/images/ChatGPT Image Jul 1, 2025, 10_19_43 AM.png"></img> </a></div>
+        <div> <a href="tinkerbell.html"><img class = "letters" src="media/images/ChatGPT Image Jun 25, 2025, 01_02_07 PM.png"></img></a> </div> 
+        <div> <a href="music.html"><img class = "letters" src="media/images/ChatGPT Image Jun 25, 2025, 12_49_20 PM.png"></img></a></div>
+        <div><a href="videos.html"><img class = "letters" src="media/images/ChatGPT Image Jun 25, 2025, 12_21_27 PM.png"></img></a></div>
+        <div><a href="games.html"><img class = "letters" src="media/images/ChatGPT Image Jul 1, 2025, 10_19_43 AM.png"></img> </a></div>
+        <div> <a href="tinkerbell.html"><img class = "letters" src="media/images/ChatGPT Image Jun 25, 2025, 01_02_07 PM.png"></img></a> </div> 
+        <div> <a href="music.html"><img class = "letters" src="media/images/ChatGPT Image Jun 25, 2025, 12_49_20 PM.png"></img></a></div>
+        <div><a href="videos.html"><img class = "letters" src="media/images/ChatGPT Image Jun 25, 2025, 12_21_27 PM.png"></img></a></div>
+        <div><a href="games.html"><img class = "letters" src="media/images/ChatGPT Image Jul 1, 2025, 10_19_43 AM.png"></img> </a></div>
+      </div>
+
+    </main>
+  </body>
+  </html>

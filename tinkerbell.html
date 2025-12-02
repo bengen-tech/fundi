@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tinkerbell 💌</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <script>
+      if (sessionStorage.getItem("isLoggedIn") !== "true") {
+        alert("Please log in first.");
+        window.location.href = "login.html";
+      }
+    </script>
+    <header>
+      <h1>For Tinkerbell 🧚‍♀️</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">🏠 Home</a></li>
+          <li><a href="music.html">🎵 Music</a></li>
+          <li><a href="videos.html">🎬 Videos</a></li>
+          <li><a href="games.html">🎮 Games</a></li>
+          <li><a href="contact.html">📞 Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <canvas id="matrix"></canvas>
+
+    <div class="terminal">
+      <h1 class="glitch">I'm Obsessed with You🧡 Diana</h1>
+      <pre class="code" id="codeBlock"></pre>
+    </div>
+
+    <script class="text">
+      // Typing code animation
+      const cyberCode = `
+As night falls again, I find myself writing to you-not with expectation, but with love, the kind that stays
+even when words goes unread. I wonder how you are, what thoughts fill your quiet hours, and if the sky above
+you tonight feels soft and kind. You're always somewhere in my thoughts-quietly, softly, like a familiar melody
+in the background. You don't have to say a word, you don't have to be near. Just knowing you exist brings me 
+some kind of peace, even when my world feels far from peaceful. God be with you , gentle guide. May His counsel 
+lead you true, through every storm life brings to you. And when the weight feels hard to bear, I pray that He holds 
+you in His care.Love's bright banner still will fly, even when we say goodbye. I won't forget, nor fade, nor run-
+I'll find you when the time has come. You are my favorite thought, my deepest hope, and my most beautiful dream.
+But tonight, and everyday, I send my heart with you to stay. God be with you till we meet, where joy and wholeness 
+are complete.💛
+`;
+
+      let i = 0;
+      const codeElement = document.getElementById("codeBlock");
+      function type() {
+        if (i < cyberCode.length) {
+          codeElement.textContent += cyberCode[i++];
+          setTimeout(type, 120);
+        }
+      }
+      type();
+    </script>
+
+    <canvas id="matrix"></canvas>
+
+    <script>
+      // Matrix animation
+      const canvas = document.getElementById("matrix");
+      const ctx = canvas.getContext("2d");
+
+      canvas.height = window.innerHeight;
+      canvas.width = window.innerWidth;
+
+      const chars = "01";
+      const fontSize = 14;
+      const columns = canvas.width / fontSize;
+      const drops = Array.from({ length: columns }).fill(1);
+
+      function draw() {
+        ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = "#00ffe0";
+        ctx.font = fontSize + "px monospace";
+
+        for (let i = 0; i < drops.length; i++) {
+          const text = chars.charAt(Math.floor(Math.random() * chars.length));
+          ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+          if (drops[i] * fontSize > canvas.height || Math.random() > 0.975) {
+            drops[i] = 0;
+          }
+
+          drops[i]++;
+        }
+      }
+
+      setInterval(draw, 50);
+    </script>
+
+    <script>
+      // Petals + Hearts animation
+      const symbols = ["❤", "🌸", "💝💛", "🌹"];
+      function createFallingSymbol() {
+        const span = document.createElement("span");
+        span.className = "falling";
+        span.style.left = Math.random() * 100 + "vw";
+        span.style.animationDuration = 4 + Math.random() * 6 + "s";
+        span.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+        document.body.appendChild(span);
+        setTimeout(() => span.remove(), 10000);
+      }
+      setInterval(createFallingSymbol, 300);
+    </script>
+  </body>
+</html>

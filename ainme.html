@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ben Gen // Cyberpunk Terminal</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: #0f0f1c;
+      color: #00ffe0;
+      font-family:  monospace;
+      overflow: hidden;
+    }
+
+    #matrix {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      opacity: 0.5;
+    }
+
+    .terminal {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 700px;
+      padding: 30px;
+      background: rgba(0, 0, 0, 0.8);
+      border: 2px solid #00ffe0;
+      box-shadow: 0 0 25px #ff00ccaa;
+      border-radius: 12px;
+    }
+
+    .code {
+      white-space: pre-wrap;
+      font-size: 1.1rem;
+      color: #ff00cc;
+    }
+
+    .glitch {
+      animation: glitch 1s infinite;
+    }
+
+    @keyframes glitch {
+      0% { text-shadow: 2px 0 magenta, -2px 0 cyan; }
+      25% { text-shadow: -1px -1px magenta, 1px 1px cyan; }
+      50% { text-shadow: 2px 2px magenta, -2px -2px cyan; }
+      75% { text-shadow: -1px 2px magenta, 1px -2px cyan; }
+      100% { text-shadow: 2px 0 magenta, -2px 0 cyan; }
+    }
+  </style>
+</head>
+<body>
+
+
+  <script>
+    // Typing code animation
+    const cyberCode = `
+Yesterday the sky forgot to shine, and silence wrapped around my mind.
+But even then, in the shadow's weight, I still stood and that counts as great💪
+I don't have to smile or speak, it's okay if today I'm weak.
+Not every step must blaze with light, some journeys only last a night.
+So rest dear soul, just breath and be,you're not alone not lost at sea.
+The stars will come, the ache will fade, and you'll find strength where pain once stayed.
+`;
+
+    let i = 0;
+    const codeElement = document.getElementById("codeBlock");
+    function type() {
+      if (i < cyberCode.length) {
+        codeElement.textContent += cyberCode[i++];
+        setTimeout(type, 120);
+      }
+    }
+    type();
+
+  </script>
+  
+  <canvas id="matrix"></canvas>
+
+  <script>
+    // Matrix animation
+    const canvas = document.getElementById("matrix");
+    const ctx = canvas.getContext("2d");
+
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+
+    const chars = "01";
+    const fontSize = 14;
+    const columns = canvas.width / fontSize;
+    const drops = Array.from({ length: columns }).fill(1);
+
+    function draw() {
+      ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = "#00ffe0";
+      ctx.font = fontSize + "px monospace";
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = chars.charAt(Math.floor(Math.random() * chars.length));
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height || Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+
+        drops[i]++;
+      }
+    }
+
+    setInterval(draw, 50);
+  </script>
+</body>
+</html>
