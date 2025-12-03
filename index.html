@@ -1,108 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ben Gen's Space</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ben Gen | Engineering Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-  <script>
-    if (sessionStorage.getItem("isLoggedIn") !== "true") {
-      alert("Please log in first.");
-      window.location.href = "login.html";
-    }
-  </script>
- 
-  <header>
-    <h1>Welcome to Ben Gen's World 🌍</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">🏠 Home</a></li>
-        <li><a href="tinkerbell.html">💌 Tinkerbell</a></li>
-        <li><a href="music.html">🎵 Music</a></li>
-        <li><a href="videos.html">🎬 Videos</a></li>
-        <li><a href="games.html">🎮 Games</a></li>
-        <li><a href="contact.html">📞 Contact</a></li>
-    </nav>
-  </header>
+  <body>
+    <header class="hero">
+      <nav>
+        <h2 class="logo">Ben<span>Gen</span></h2>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
 
-  <!DOCTYPE html>
-<html lang="en">
-<head>  
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tinkerbell 💌</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <script>
-    if (sessionStorage.getItem("isLoggedIn") !== "true") {
-      alert("Please log in first.");
-      window.location.href = "login.html";
-    }
-  </script>
-  
-  <canvas id="matrix"></canvas>
-
-  <script>
-    // Matrix animation
-    const canvas = document.getElementById("matrix");
-    const ctx = canvas.getContext("2d");
-
-    canvas.height = window.innerHeight;
-    canvas.width = window.innerWidth;
-
-    const chars = "01";
-    const fontSize = 14;
-    const columns = canvas.width / fontSize;
-    const drops = Array.from({ length: columns }).fill(1);
-
-    function draw() {
-      ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      ctx.fillStyle = "#00ffe0";
-      ctx.font = fontSize + "px monospace";
-
-      for (let i = 0; i < drops.length; i++) {
-        const text = chars.charAt(Math.floor(Math.random() * chars.length));
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-        if (drops[i] * fontSize > canvas.height || Math.random() > 0.975) {
-          drops[i] = 0;
-        }
-
-        drops[i]++;
-      }
-    }
-
-    setInterval(draw, 50);
-  </script>
-
-</body>
-</html>
-
-
-  <main>
-
-      <div class="grid">
-       <div> <a href="tinkerbell.html"><img class = "letters" src="ChatGPT Image Jun 25, 2025, 01_02_07 PM.png"></img></a> </div> 
-        <div> <a href="music.html"><img class = "letters" src="ChatGPT Image Jun 25, 2025, 12_49_20 PM.png"></img></a></div>
-        <div><a href="videos.html"><img class = "letters" src="ChatGPT Image Jun 25, 2025, 12_21_27 PM.png"></img></a></div>
-        <div><a href="games.html"><img class = "letters" src="ChatGPT Image Jul 1, 2025, 10_19_43 AM.png"></img> </a></div>
-        <div> <a href="tinkerbell.html"><img class = "letters" src="ChatGPT Image Jun 25, 2025, 01_02_07 PM.png"></img></a> </div> 
-        <div> <a href="music.html"><img class = "letters" src="ChatGPT Image Jun 25, 2025, 12_49_20 PM.png"></img></a></div>
-        <div><a href="videos.html"><img class = "letters" src="ChatGPT Image Jun 25, 2025, 12_21_27 PM.png"></img></a></div>
-        <div><a href="games.html"><img class = "letters" src="ChatGPT Image Jul 1, 2025, 10_19_43 AM.png"></img> </a></div>
-        <div> <a href="tinkerbell.html"><img class = "letters" src="ChatGPT Image Jun 25, 2025, 01_02_07 PM.png"></img></a> </div> 
-        <div> <a href="music.html"><img class = "letters" src="ChatGPT Image Jun 25, 2025, 12_49_20 PM.png"></img></a></div>
-        <div><a href="videos.html"><img class = "letters" src="ChatGPT Image Jun 25, 2025, 12_21_27 PM.png"></img></a></div>
-        <div><a href="games.html"><img class = "letters" src="ChatGPT Image Jul 1, 2025, 10_19_43 AM.png"></img> </a></div>
+      <div class="hero-text">
+        <h1>Welcome, I'm <span class="highlight">Genda Benjamin Garama</span> </h1>
+          <h2>Electrical and Electronics Engineering Student</h2>
+        <a href="#projects" class="btn">View My Projects</a>
       </div>
+    </header>
 
-    </main>
+    <section id="contact" class="contact">
+      <h2>Contact Me</h2>
+      <p>Email: gendabenjamin5@gmail.com</p>
+      <p>0705506888</p>
+    </section>
   </body>
-
-  </html>
+</html>
