@@ -277,4 +277,17 @@ footer { background:#111; color:#fff; padding:20px 0; text-align:center; border:
 
 
 
+  margin-top: 5px;
+  height: 24px;
+  overflow: hidden;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #00eaff;
+}
+
+.animated-titles span {
+  display: block;
+  height: 24px;
+  animation: slide 8s infinite;
+}
 
