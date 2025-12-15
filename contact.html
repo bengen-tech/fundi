@@ -1,87 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>
-    if (sessionStorage.getItem("isLoggedIn") !== "true") {
-      alert("Please log in first.");
-      window.location.href = "login.html";
-    }
-  </script>
-  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Ben Gen 📞</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    .contact-section {
-      max-width: 700px;
-      margin: 40px auto;
-      background: #fff;
-      border-radius: 12px;
-      padding: 30px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    .contact-section h2 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .contact-section form {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .contact-section input,
-    .contact-section textarea {
-      padding: 12px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 1em;
-    }
-
-    .contact-section button {
-      padding: 12px;
-      background: #333;
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    .contact-section button:hover {
-      background: #555;
-    }
-
-    .social-links {
-      text-align: center;
-      margin-top: 30px;
-    }
-
-    .social-links a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-    }
-  </style>
+  <title>Contact | Ben Gen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="contact-style.css" />
 </head>
 <body>
-  <header>
-    <h1>📞 Contact Ben Gen</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">🏠 Home</a></li>
-        <li><a href="tinkerbell.html">💌 Tinkerbell</a></li>
-        <li><a href="music.html">🎵 Music</a></li>
-        <li><a href="videos.html">🎬 Videos</a></li>
-        <li><a href="games.html">🎮 Games</a></li>
-      </ul>
-    </nav>
+  <!-- NAVIGATION -->
+  <nav>
+    <h2 class="logo">Ben<span>Gen</span></h2>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <h1>Get in Touch</h1>
+    <h2>I'd love to hear from you!</h2>
   </header>
 
-  <main>
-    <div class="contact-section">
-      <h2>Let’s Get in Touch</h
+  <!-- CONTACT -->
+  <section class="contact">
+    <h2>Contact Information</h2>
+    <div class="contact-info">
+      <p><strong>Email:</strong> <a href="mailto:gendabenjamin5@gmail.com">gendabenjamin5@gmail.com</a></p>
+      <p><strong>Phone:</strong> <a href="tel:+254705506888">0705 506 888</a></p>
+    </div>
 
+    <!-- FORMSPREE FORM -->
+    <form action="https://formspree.io/f/xwpgjkdw" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="_replyto" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Ben Gen. All Rights Reserved.</p>
+  </footer>
+
+  <!-- JS for Hamburger -->
+  <script src="contact.js"></script>
+</body>
+</html>
