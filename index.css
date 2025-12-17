@@ -1,0 +1,204 @@
+/* 1. Global Reset & Variables */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary-color: #0a192f;   /* Deep Navy Background */
+    --secondary-color: #112240; /* Slightly lighter Navy */
+    --accent-color: #64ffda;    /* Electric Cyan - Engineering feel */
+    --text-light: #ccd6f6;      /* Off-white text */
+    --text-dim: #8892b0;        /* Grey text */
+    --white: #ffffff;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth; /* Makes clicking "Contact" scroll smoothly */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* 2. Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--white);
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li a {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-light);
+    transition: var(--transition);
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+/* 3. Hero Section */
+.hero {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    /* Background Image Logic */
+    background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.95)), 
+                url('Wha.jpg'); /* Your Image Here */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax effect */
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+
+.hero-text .highlight {
+    color: var(--accent-color);
+}
+
+.hero-text h2 {
+    font-size: 1.5rem;
+    color: var(--text-dim);
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+/* 4. Button Styles */
+.btn {
+    display: inline-block;
+    padding: 12px 32px;
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    color: var(--accent-color);
+    font-weight: 600;
+    transition: var(--transition);
+    background: transparent;
+}
+
+.btn:hover {
+    background: rgba(100, 255, 218, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px -10px rgba(2, 12, 27, 0.7);
+}
+
+/* 5. Footer Section */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--text-dim);
+    padding: 50px 5% 20px;
+    text-align: center;
+    border-top: 1px solid rgba(100, 255, 218, 0.1);
+}
+
+footer h3 {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+footer p {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.contact-links {
+    margin-bottom: 30px;
+}
+
+.contact-links a {
+    color: var(--accent-color);
+    font-weight: 500;
+    margin: 0 10px;
+    transition: var(--transition);
+    font-size: 1.1rem;
+}
+
+.contact-links a:hover {
+    text-decoration: underline;
+    color: var(--white);
+}
+
+.contact-links span {
+    color: var(--text-dim);
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 20px;
+}
+
+/* 6. Responsive Design (Mobile) */
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-text h2 {
+        font-size: 1.1rem;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+        background-color: var(--primary-color);
+    }
+    
+    nav ul {
+        gap: 20px;
+    }
+    
+    .contact-links a {
+        display: block; /* Stacks email and phone on mobile */
+        margin: 10px 0;
+    }
+    
+    .contact-links span {
+        display: none; /* Hides the pipe separator on mobile */
+    }
+}
