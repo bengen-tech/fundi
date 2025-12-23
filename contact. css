@@ -1,4 +1,6 @@
-
+/* =========================================
+   1. RESET & VARIABLES
+   ========================================= */
 :root {
   --primary-color: #0056b3;   /* Engineering Blue */
   --accent-color: #00a8cc;    /* Lighter Cyan Accent */
